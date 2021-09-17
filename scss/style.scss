@@ -16,6 +16,9 @@ height: 120px;
   padding: 0; 
   cursor: pointer;
 }
+&__btn-menu{
+    display: none; 
+ }
 }
 .logo{
     margin: 0 auto;
@@ -229,11 +232,15 @@ padding-right: 45px;
     z-index: 20;
     &__list{
         display: flex;
+        overflow-x: auto;
+    }
+    &__item{
+        position: relative;
+        padding-right: 8px;
     }
     &__item::after{
+        position: absolute;
         content:"/";
-        margin-left: -4px;
-        margin-right: 4px;
     }
     &__item:last-child::after{
         display: none;      
@@ -707,6 +714,9 @@ padding-right: 45px;
 .map{
    margin-top: -53px; 
    margin-bottom: 50px;
+   iframe{
+     height: 578px;
+   }
 }
 .contact{
     padding-bottom: 100px;
@@ -819,15 +829,17 @@ padding-right: 45px;
         top: 0;
         bottom: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         background-color: rgba(#fff, .6);
         color: $title;
         @extend %title-font;
         line-height: 22px;
-        padding: 0 5px;
+        padding: 0 15px;
         text-align: center;
         opacity: 0;
+        left:-15px;
+        right:5px;
     }
 }
 .blog{
@@ -845,6 +857,8 @@ padding-right: 45px;
         @extend %title-font;
         margin-bottom: 16px;
         line-height: 23px;
+        w100
+
     }
     &__category-item{
         margin-bottom: 12px;
@@ -1214,3 +1228,4 @@ padding-right: 45px;
     }
 
 }
+@import 'media';
